@@ -1,0 +1,2214 @@
+{
+  "tables": {
+    "customer": {
+      "name": "customer",
+      "columns": {
+        "customer_id": {
+          "name": "customer_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "store_id": {
+          "name": "store_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "first_name": {
+          "name": "first_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_name": {
+          "name": "last_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "address_id": {
+          "name": "address_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "activebool": {
+          "name": "activebool",
+          "type": "bool",
+          "default": true,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "create_date": {
+          "name": "create_date",
+          "type": "date",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "active": {
+          "name": "active",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_fk_address_id": {
+          "name": "idx_fk_address_id",
+          "unique": false,
+          "columns": [
+            "address_id"
+          ],
+          "type": "btree"
+        },
+        "idx_fk_store_id": {
+          "name": "idx_fk_store_id",
+          "unique": false,
+          "columns": [
+            "store_id"
+          ],
+          "type": "btree"
+        },
+        "idx_last_name": {
+          "name": "idx_last_name",
+          "unique": false,
+          "columns": [
+            "last_name"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "actor": {
+      "name": "actor",
+      "columns": {
+        "actor_id": {
+          "name": "actor_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "first_name": {
+          "name": "first_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_name": {
+          "name": "last_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_actor_last_name": {
+          "name": "idx_actor_last_name",
+          "unique": false,
+          "columns": [
+            "last_name"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "category": {
+      "name": "category",
+      "columns": {
+        "category_id": {
+          "name": "category_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "film": {
+      "name": "film",
+      "columns": {
+        "film_id": {
+          "name": "film_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "release_year": {
+          "name": "release_year",
+          "type": "publicyear",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "language_id": {
+          "name": "language_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "rental_duration": {
+          "name": "rental_duration",
+          "type": "int2",
+          "default": 3,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "rental_rate": {
+          "name": "rental_rate",
+          "type": "numeric",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "length": {
+          "name": "length",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "replacement_cost": {
+          "name": "replacement_cost",
+          "type": "numeric",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "rating": {
+          "name": "rating",
+          "type": "publicmpaa_rating",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "special_features": {
+          "name": "special_features",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "fulltext": {
+          "name": "fulltext",
+          "type": "tsvector",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "film_fulltext_idx": {
+          "name": "film_fulltext_idx",
+          "unique": false,
+          "columns": [
+            "fulltext"
+          ],
+          "type": "gist"
+        },
+        "idx_fk_language_id": {
+          "name": "idx_fk_language_id",
+          "unique": false,
+          "columns": [
+            "language_id"
+          ],
+          "type": "btree"
+        },
+        "idx_title": {
+          "name": "idx_title",
+          "unique": false,
+          "columns": [
+            "title"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "film_actor": {
+      "name": "film_actor",
+      "columns": {
+        "actor_id": {
+          "name": "actor_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "film_id": {
+          "name": "film_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_fk_film_id": {
+          "name": "idx_fk_film_id",
+          "unique": false,
+          "columns": [
+            "film_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "film_category": {
+      "name": "film_category",
+      "columns": {
+        "film_id": {
+          "name": "film_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "category_id": {
+          "name": "category_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "address": {
+      "name": "address",
+      "columns": {
+        "address_id": {
+          "name": "address_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "address": {
+          "name": "address",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "address2": {
+          "name": "address2",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "district": {
+          "name": "district",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "city_id": {
+          "name": "city_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "postal_code": {
+          "name": "postal_code",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "phone": {
+          "name": "phone",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_fk_city_id": {
+          "name": "idx_fk_city_id",
+          "unique": false,
+          "columns": [
+            "city_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "auth_group": {
+      "name": "auth_group",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "auth_group_name_a6ea08ec_like": {
+          "name": "auth_group_name_a6ea08ec_like",
+          "unique": false,
+          "columns": [
+            "name"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "auth_group_permissions": {
+      "name": "auth_group_permissions",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int8",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "group_id": {
+          "name": "group_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "permission_id": {
+          "name": "permission_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "auth_group_permissions_group_id_b120cbf9": {
+          "name": "auth_group_permissions_group_id_b120cbf9",
+          "unique": false,
+          "columns": [
+            "group_id"
+          ],
+          "type": "btree"
+        },
+        "auth_group_permissions_permission_id_84c5c92e": {
+          "name": "auth_group_permissions_permission_id_84c5c92e",
+          "unique": false,
+          "columns": [
+            "permission_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "auth_permission": {
+      "name": "auth_permission",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "content_type_id": {
+          "name": "content_type_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "codename": {
+          "name": "codename",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "auth_permission_content_type_id_2f476e4b": {
+          "name": "auth_permission_content_type_id_2f476e4b",
+          "unique": false,
+          "columns": [
+            "content_type_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "auth_user": {
+      "name": "auth_user",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "password": {
+          "name": "password",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_login": {
+          "name": "last_login",
+          "type": "timestamptz",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "is_superuser": {
+          "name": "is_superuser",
+          "type": "bool",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "username": {
+          "name": "username",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "first_name": {
+          "name": "first_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_name": {
+          "name": "last_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "is_staff": {
+          "name": "is_staff",
+          "type": "bool",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "bool",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "date_joined": {
+          "name": "date_joined",
+          "type": "timestamptz",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "auth_user_username_6821ab7c_like": {
+          "name": "auth_user_username_6821ab7c_like",
+          "unique": false,
+          "columns": [
+            "username"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "auth_user_groups": {
+      "name": "auth_user_groups",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int8",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "group_id": {
+          "name": "group_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "auth_user_groups_group_id_97559544": {
+          "name": "auth_user_groups_group_id_97559544",
+          "unique": false,
+          "columns": [
+            "group_id"
+          ],
+          "type": "btree"
+        },
+        "auth_user_groups_user_id_6a12ed8b": {
+          "name": "auth_user_groups_user_id_6a12ed8b",
+          "unique": false,
+          "columns": [
+            "user_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "auth_user_user_permissions": {
+      "name": "auth_user_user_permissions",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int8",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "permission_id": {
+          "name": "permission_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "auth_user_user_permissions_permission_id_1fbb5f2c": {
+          "name": "auth_user_user_permissions_permission_id_1fbb5f2c",
+          "unique": false,
+          "columns": [
+            "permission_id"
+          ],
+          "type": "btree"
+        },
+        "auth_user_user_permissions_user_id_a95ead1b": {
+          "name": "auth_user_user_permissions_user_id_a95ead1b",
+          "unique": false,
+          "columns": [
+            "user_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "city": {
+      "name": "city",
+      "columns": {
+        "city_id": {
+          "name": "city_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "city": {
+          "name": "city",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "country_id": {
+          "name": "country_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_fk_country_id": {
+          "name": "idx_fk_country_id",
+          "unique": false,
+          "columns": [
+            "country_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "country": {
+      "name": "country",
+      "columns": {
+        "country_id": {
+          "name": "country_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "country": {
+          "name": "country",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "django_admin_log": {
+      "name": "django_admin_log",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "action_time": {
+          "name": "action_time",
+          "type": "timestamptz",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "object_id": {
+          "name": "object_id",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "object_repr": {
+          "name": "object_repr",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "action_flag": {
+          "name": "action_flag",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "change_message": {
+          "name": "change_message",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "content_type_id": {
+          "name": "content_type_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "django_admin_log_content_type_id_c4bce8eb": {
+          "name": "django_admin_log_content_type_id_c4bce8eb",
+          "unique": false,
+          "columns": [
+            "content_type_id"
+          ],
+          "type": "btree"
+        },
+        "django_admin_log_user_id_c564eba6": {
+          "name": "django_admin_log_user_id_c564eba6",
+          "unique": false,
+          "columns": [
+            "user_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "django_content_type": {
+      "name": "django_content_type",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "app_label": {
+          "name": "app_label",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "model": {
+          "name": "model",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "django_migrations": {
+      "name": "django_migrations",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int8",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "app": {
+          "name": "app",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "applied": {
+          "name": "applied",
+          "type": "timestamptz",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "django_session": {
+      "name": "django_session",
+      "columns": {
+        "session_key": {
+          "name": "session_key",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "session_data": {
+          "name": "session_data",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "expire_date": {
+          "name": "expire_date",
+          "type": "timestamptz",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "django_session_expire_date_a5c62663": {
+          "name": "django_session_expire_date_a5c62663",
+          "unique": false,
+          "columns": [
+            "expire_date"
+          ],
+          "type": "btree"
+        },
+        "django_session_session_key_c0390e0f_like": {
+          "name": "django_session_session_key_c0390e0f_like",
+          "unique": false,
+          "columns": [
+            "session_key"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "film_rep": {
+      "name": "film_rep",
+      "columns": {
+        "film_id": {
+          "name": "film_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "description": {
+          "name": "description",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "release_year": {
+          "name": "release_year",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "language_id": {
+          "name": "language_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "rental_duration": {
+          "name": "rental_duration",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "rental_rate": {
+          "name": "rental_rate",
+          "type": "numeric",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "length": {
+          "name": "length",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "replacement_cost": {
+          "name": "replacement_cost",
+          "type": "numeric",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "rating": {
+          "name": "rating",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "special_features": {
+          "name": "special_features",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "fulltext": {
+          "name": "fulltext",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "inventory": {
+      "name": "inventory",
+      "columns": {
+        "inventory_id": {
+          "name": "inventory_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "film_id": {
+          "name": "film_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "store_id": {
+          "name": "store_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_store_id_film_id": {
+          "name": "idx_store_id_film_id",
+          "unique": false,
+          "columns": [
+            "store_id",
+            "film_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "language": {
+      "name": "language",
+      "columns": {
+        "language_id": {
+          "name": "language_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "name": {
+          "name": "name",
+          "type": "bpchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "main_item": {
+      "name": "main_item",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int8",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "payment": {
+      "name": "payment",
+      "columns": {
+        "payment_id": {
+          "name": "payment_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "customer_id": {
+          "name": "customer_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "staff_id": {
+          "name": "staff_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "rental_id": {
+          "name": "rental_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "amount": {
+          "name": "amount",
+          "type": "numeric",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "payment_date": {
+          "name": "payment_date",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_fk_customer_id": {
+          "name": "idx_fk_customer_id",
+          "unique": false,
+          "columns": [
+            "customer_id"
+          ],
+          "type": "btree"
+        },
+        "idx_fk_rental_id": {
+          "name": "idx_fk_rental_id",
+          "unique": false,
+          "columns": [
+            "rental_id"
+          ],
+          "type": "btree"
+        },
+        "idx_fk_staff_id": {
+          "name": "idx_fk_staff_id",
+          "unique": false,
+          "columns": [
+            "staff_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "rental": {
+      "name": "rental",
+      "columns": {
+        "rental_id": {
+          "name": "rental_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "rental_date": {
+          "name": "rental_date",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "inventory_id": {
+          "name": "inventory_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "customer_id": {
+          "name": "customer_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "return_date": {
+          "name": "return_date",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "staff_id": {
+          "name": "staff_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_fk_inventory_id": {
+          "name": "idx_fk_inventory_id",
+          "unique": false,
+          "columns": [
+            "inventory_id"
+          ],
+          "type": "btree"
+        },
+        "idx_unq_rental_rental_date_inventory_id_customer_id": {
+          "name": "idx_unq_rental_rental_date_inventory_id_customer_id",
+          "unique": true,
+          "columns": [
+            "rental_date",
+            "inventory_id",
+            "customer_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    },
+    "staff": {
+      "name": "staff",
+      "columns": {
+        "staff_id": {
+          "name": "staff_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "first_name": {
+          "name": "first_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_name": {
+          "name": "last_name",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "address_id": {
+          "name": "address_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "store_id": {
+          "name": "store_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "active": {
+          "name": "active",
+          "type": "bool",
+          "default": true,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "username": {
+          "name": "username",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "password": {
+          "name": "password",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "picture": {
+          "name": "picture",
+          "type": "bytea",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {},
+      "constraints": {}
+    },
+    "store": {
+      "name": "store",
+      "columns": {
+        "store_id": {
+          "name": "store_id",
+          "type": "int4",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "manager_staff_id": {
+          "name": "manager_staff_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "address_id": {
+          "name": "address_id",
+          "type": "int2",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "comment": null
+        }
+      },
+      "comment": null,
+      "indexes": {
+        "idx_unq_manager_staff_id": {
+          "name": "idx_unq_manager_staff_id",
+          "unique": true,
+          "columns": [
+            "manager_staff_id"
+          ],
+          "type": "btree"
+        }
+      },
+      "constraints": {}
+    }
+  },
+  "relationships": {
+    "auth_group_permissio_permission_id_84c5c92e_fk_auth_perm": {
+      "name": "auth_group_permissio_permission_id_84c5c92e_fk_auth_perm",
+      "primaryTableName": "auth_permission",
+      "primaryColumnName": "id",
+      "foreignTableName": "auth_group_permissions",
+      "foreignColumnName": "permission_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "auth_group_permissions_group_id_b120cbf9_fk_auth_group_id": {
+      "name": "auth_group_permissions_group_id_b120cbf9_fk_auth_group_id",
+      "primaryTableName": "auth_group",
+      "primaryColumnName": "id",
+      "foreignTableName": "auth_group_permissions",
+      "foreignColumnName": "group_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "auth_permission_content_type_id_2f476e4b_fk_django_co": {
+      "name": "auth_permission_content_type_id_2f476e4b_fk_django_co",
+      "primaryTableName": "django_content_type",
+      "primaryColumnName": "id",
+      "foreignTableName": "auth_permission",
+      "foreignColumnName": "content_type_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "auth_user_groups_group_id_97559544_fk_auth_group_id": {
+      "name": "auth_user_groups_group_id_97559544_fk_auth_group_id",
+      "primaryTableName": "auth_group",
+      "primaryColumnName": "id",
+      "foreignTableName": "auth_user_groups",
+      "foreignColumnName": "group_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "auth_user_groups_user_id_6a12ed8b_fk_auth_user_id": {
+      "name": "auth_user_groups_user_id_6a12ed8b_fk_auth_user_id",
+      "primaryTableName": "auth_user",
+      "primaryColumnName": "id",
+      "foreignTableName": "auth_user_groups",
+      "foreignColumnName": "user_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm": {
+      "name": "auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm",
+      "primaryTableName": "auth_permission",
+      "primaryColumnName": "id",
+      "foreignTableName": "auth_user_user_permissions",
+      "foreignColumnName": "permission_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id": {
+      "name": "auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id",
+      "primaryTableName": "auth_user",
+      "primaryColumnName": "id",
+      "foreignTableName": "auth_user_user_permissions",
+      "foreignColumnName": "user_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "customer_address_id_fkey": {
+      "name": "customer_address_id_fkey",
+      "primaryTableName": "address",
+      "primaryColumnName": "address_id",
+      "foreignTableName": "customer",
+      "foreignColumnName": "address_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "django_admin_log_content_type_id_c4bce8eb_fk_django_co": {
+      "name": "django_admin_log_content_type_id_c4bce8eb_fk_django_co",
+      "primaryTableName": "django_content_type",
+      "primaryColumnName": "id",
+      "foreignTableName": "django_admin_log",
+      "foreignColumnName": "content_type_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "django_admin_log_user_id_c564eba6_fk_auth_user_id": {
+      "name": "django_admin_log_user_id_c564eba6_fk_auth_user_id",
+      "primaryTableName": "auth_user",
+      "primaryColumnName": "id",
+      "foreignTableName": "django_admin_log",
+      "foreignColumnName": "user_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "film_actor_actor_id_fkey": {
+      "name": "film_actor_actor_id_fkey",
+      "primaryTableName": "actor",
+      "primaryColumnName": "actor_id",
+      "foreignTableName": "film_actor",
+      "foreignColumnName": "actor_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "film_actor_film_id_fkey": {
+      "name": "film_actor_film_id_fkey",
+      "primaryTableName": "film",
+      "primaryColumnName": "film_id",
+      "foreignTableName": "film_actor",
+      "foreignColumnName": "film_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "film_category_category_id_fkey": {
+      "name": "film_category_category_id_fkey",
+      "primaryTableName": "category",
+      "primaryColumnName": "category_id",
+      "foreignTableName": "film_category",
+      "foreignColumnName": "category_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "film_category_film_id_fkey": {
+      "name": "film_category_film_id_fkey",
+      "primaryTableName": "film",
+      "primaryColumnName": "film_id",
+      "foreignTableName": "film_category",
+      "foreignColumnName": "film_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "film_language_id_fkey": {
+      "name": "film_language_id_fkey",
+      "primaryTableName": "language",
+      "primaryColumnName": "language_id",
+      "foreignTableName": "film",
+      "foreignColumnName": "language_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "fk_address_city": {
+      "name": "fk_address_city",
+      "primaryTableName": "city",
+      "primaryColumnName": "city_id",
+      "foreignTableName": "address",
+      "foreignColumnName": "city_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "fk_city": {
+      "name": "fk_city",
+      "primaryTableName": "country",
+      "primaryColumnName": "country_id",
+      "foreignTableName": "city",
+      "foreignColumnName": "country_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "inventory_film_id_fkey": {
+      "name": "inventory_film_id_fkey",
+      "primaryTableName": "film",
+      "primaryColumnName": "film_id",
+      "foreignTableName": "inventory",
+      "foreignColumnName": "film_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "payment_customer_id_fkey": {
+      "name": "payment_customer_id_fkey",
+      "primaryTableName": "customer",
+      "primaryColumnName": "customer_id",
+      "foreignTableName": "payment",
+      "foreignColumnName": "customer_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "payment_rental_id_fkey": {
+      "name": "payment_rental_id_fkey",
+      "primaryTableName": "rental",
+      "primaryColumnName": "rental_id",
+      "foreignTableName": "payment",
+      "foreignColumnName": "rental_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "SET_NULL"
+    },
+    "payment_staff_id_fkey": {
+      "name": "payment_staff_id_fkey",
+      "primaryTableName": "staff",
+      "primaryColumnName": "staff_id",
+      "foreignTableName": "payment",
+      "foreignColumnName": "staff_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "rental_customer_id_fkey": {
+      "name": "rental_customer_id_fkey",
+      "primaryTableName": "customer",
+      "primaryColumnName": "customer_id",
+      "foreignTableName": "rental",
+      "foreignColumnName": "customer_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "rental_inventory_id_fkey": {
+      "name": "rental_inventory_id_fkey",
+      "primaryTableName": "inventory",
+      "primaryColumnName": "inventory_id",
+      "foreignTableName": "rental",
+      "foreignColumnName": "inventory_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "rental_staff_id_key": {
+      "name": "rental_staff_id_key",
+      "primaryTableName": "staff",
+      "primaryColumnName": "staff_id",
+      "foreignTableName": "rental",
+      "foreignColumnName": "staff_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "NO_ACTION",
+      "deleteConstraint": "NO_ACTION"
+    },
+    "staff_address_id_fkey": {
+      "name": "staff_address_id_fkey",
+      "primaryTableName": "address",
+      "primaryColumnName": "address_id",
+      "foreignTableName": "staff",
+      "foreignColumnName": "address_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "store_address_id_fkey": {
+      "name": "store_address_id_fkey",
+      "primaryTableName": "address",
+      "primaryColumnName": "address_id",
+      "foreignTableName": "store",
+      "foreignColumnName": "address_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    },
+    "store_manager_staff_id_fkey": {
+      "name": "store_manager_staff_id_fkey",
+      "primaryTableName": "staff",
+      "primaryColumnName": "staff_id",
+      "foreignTableName": "store",
+      "foreignColumnName": "manager_staff_id",
+      "cardinality": "ONE_TO_MANY",
+      "updateConstraint": "CASCADE",
+      "deleteConstraint": "RESTRICT"
+    }
+  },
+  "tableGroups": {}
+}
