@@ -1,0 +1,20 @@
+name: ERD Build
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-erd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate ER Diagrams
+        run: npx @liam-hq/cli erd build --input schema.sql --format postgres
+
+    # - Next step: Deploy ERD `./dist` to your preferred hosting service for easy sharing and access.
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
